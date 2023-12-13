@@ -34,9 +34,9 @@ public class MoneyTransferTest {
 
         var transferPage = dashboardPage.transferToFirstCard();
 
-        var amount = 500;
-        var CardInfo = getSecondCard();
-        transferPage.moneyTransfer(CardInfo, amount);
+        var amount = 0;
+        var cardInfo = getSecondCard();
+        transferPage.moneyTransfer(cardInfo, amount);
 
         var expectedBalanceOfFirstCard = getBalanceIfIncrease(balanceOfFirstCard, amount);
         var expectedBalanceOfSecondCard = getBalanceIfDecrease(balanceOfSecondCard, amount);
@@ -57,9 +57,9 @@ public class MoneyTransferTest {
 
         var transferPage = dashboardPage.transferToSecondCard();
 
-        var amount = 2000;
-        var CardInfo = getFirstCard();
-        transferPage.moneyTransfer(CardInfo, amount);
+        var amount =1000;
+        var cardInfo = getFirstCard();
+        transferPage.moneyTransfer(cardInfo, amount);
 
         var expectedBalanceOfFirstCard = getBalanceIfDecrease(balanceOfFirstCard, amount);
         var expectedBalanceOfSecondCard = getBalanceIfIncrease(balanceOfSecondCard, amount);
@@ -81,8 +81,8 @@ public class MoneyTransferTest {
         var transferPage = dashboardPage.transferToSecondCard();
 
         var amount = 0;
-        var CardInfo = getFirstCard();
-        transferPage.moneyTransfer(CardInfo, amount);
+        var cardInfo = getFirstCard();
+        transferPage.moneyTransfer(cardInfo, amount);
 
         var expectedBalanceOfFirstCard = getBalanceIfDecrease(balanceOfFirstCard, amount);
         var expectedBalanceOfSecondCard = getBalanceIfIncrease(balanceOfSecondCard, amount);
